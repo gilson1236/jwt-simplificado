@@ -1,11 +1,13 @@
 package com.dio.project.jwtsimplificado.mapper;
 
-import com.dio.project.jwtsimplificado.dto.UserRegistrationDTO;
-import com.dio.project.jwtsimplificado.dto.UserResponserDTO;
-import com.dio.project.jwtsimplificado.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
+
+import com.dio.project.jwtsimplificado.dto.UserAuthenticateDTO;
+import com.dio.project.jwtsimplificado.dto.UserRegistrationDTO;
+import com.dio.project.jwtsimplificado.dto.UserResponserDTO;
+import com.dio.project.jwtsimplificado.entity.User;
 
 @Mapper
 public interface UserMapper {
@@ -18,4 +20,7 @@ public interface UserMapper {
 
     @Mapping(target = "email", source = "email")
     public UserResponserDTO toDTO(User user);
+
+    @Mapping(target = "tipo", source = "tipo")
+    public UserAuthenticateDTO toDTOAuthenticated(User user, String tipo);
 }

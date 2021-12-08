@@ -1,6 +1,5 @@
 package com.dio.project.jwtsimplificado.dto;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,13 +9,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class UserResponserDTO {
+public class UserAuthenticateDTO {
 
     private Long id;
-
     private String nome;
     private String email;
+    private String token;
     private String senha;
+    private String tipo;
 
 }
